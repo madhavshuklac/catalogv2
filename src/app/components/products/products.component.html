@@ -1,0 +1,111 @@
+<style>
+  .card {
+    width: 305px;
+    height: 460px;
+    border: 1px solid #d0d3dd;
+    box-shadow: 0px 5px 5px rgba(24, 27, 35, 0.05);
+    border-radius: 5px;
+    margin: 20px 20px 0 0;
+  }
+  .img-container {
+    height: 226px;
+  }
+  .img-top {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .select-box {
+    font-size: 14px;
+    color: #585c69;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .select-box input {
+    border: 1.5px solid #585c68;
+  }
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .spinner p {
+    font-size: 12px;
+    position: relative;
+    left: -20px;
+  }
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-body {
+    background-color: #f4f6fa;
+    height: 225px ;
+    padding: 5px;
+  }
+  .card-body .nav {
+    font-size: 12px;
+    font-weight: 400;
+    color: #9498a6;
+  }
+  .card-body .product-name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: #0d4aff;
+    margin: 8px 0;
+  }
+  .card-body .desc {
+      white-space: nowrap;
+    color: #181b23;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .button{
+    position: sticky;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    background-color: #0d4aff;
+  }
+</style>
+
+<div class="cards">
+  <div class="card">
+    <div class="img-container">
+      <div class="img-top">
+        <span class="select-box">
+          <input type="checkbox" />
+          Select
+        </span>
+        <div class="spinner">
+          <mat-progress-spinner
+            class="example-margin"
+            [color]="products[0].score >= 75 ? 'success' : 'warn'"
+            [value]="products[0].score"
+            diameter="28"
+          >
+          </mat-progress-spinner>
+          <p>{{ products[0].score }}</p>
+        </div>
+      </div>
+      <div class="image">
+        <img src="{{ products[0].img_url }}" />
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="nav">{{ products[0].navigation }}</div>
+      <div class="product-name">{{ products[0].name }}</div>
+      <div class="desc">{{ products[0].desc }}</div>
+      <div class="info"></div>
+      <div class="button"></div>
+    </div>
+  </div>
+</div>

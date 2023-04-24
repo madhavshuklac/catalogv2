@@ -1,0 +1,33 @@
+
+<div class="s-v-switch">
+    
+    <div class="search-input" >
+      <img class="search-icon" src="../assets/icons/Search.png" alt="search" />
+      <input type="text" class="s-input" placeholder="Search product and explore categories here.." >
+    </div>
+
+    <select class="select-box" >
+      <option>
+
+      </option>
+    </select>
+
+    <div *ngIf="view==='grid'" class="switch-view">
+      <div class="view fill">
+        <img src="../assets/icons/GridView-w.png" >
+      </div>
+      <div class="view" (click)="switch('list')">
+        <img src="../assets/icons/TablerView.png" >
+      </div>
+    </div>
+
+    <div *ngIf="view==='list'" class="switch-view">
+      <div (click)="switch('grid')" class="view">
+        <img src="../assets/icons/GridView.png" >
+      </div>
+      <div class="view fill">
+        <img src="../assets/icons/TablerView-w.png" >
+      </div>
+    </div>
+
+  </div>

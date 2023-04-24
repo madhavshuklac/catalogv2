@@ -1,0 +1,14 @@
+*{
+  font-family: "Outfit";
+}
+
+.home{
+    padding: 40px 78px;
+    display: flex;
+  }
+  .filters {
+    width: 25%;
+  }
+  .products{
+    width:75%;
+  }
